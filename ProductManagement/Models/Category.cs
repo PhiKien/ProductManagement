@@ -20,9 +20,9 @@ namespace ProductManagement.Models
             Name = name;
         }
 
-        public Category(int iD, string name)
+        public Category(int id, string name)
         {
-            ID = iD;
+            ID = id;
             Name = name;
         }
 

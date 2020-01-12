@@ -23,9 +23,9 @@ namespace ProductManagement.Models
             CategoryID = categoryID;
         }
 
-        public Product(int iD, string name, string description, int numberInStock, int categoryID)
+        public Product(int id, string name, string description, int numberInStock, int categoryID)
         {
-            ID = iD;
+            ID = id;
             Name = name;
             Description = description;
             NumberInStock = numberInStock;

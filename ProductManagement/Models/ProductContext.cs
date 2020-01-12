@@ -6,6 +6,9 @@ using System.Web;
 
 namespace ProductManagement.Models
 {
+    // Enable-Migrations
+    // Add-Migration init
+    // Update-Database
     public class ProductContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
@@ -21,5 +24,6 @@ namespace ProductManagement.Models
         {
             base.OnModelCreating(modelBuilder);
         }
+
     }
 }
