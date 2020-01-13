@@ -10,11 +10,11 @@ namespace ProductManagement.AutoMappers
 {
     public class DomainToViewModelMappingProfile : Profile
     {
-        public DomainToViewModelMappingProfile()
-        {
-            CreateMap<Product, ProductViewModel>();
-            //CreateMap<Product, ProductViewModel>();
-            CreateMap<Category, CategoryViewModel>();
-        }
+        //public DomainToViewModelMappingProfile()
+        //{
+        //    //CreateMap<Product, ProductViewModel>();
+        //    ////CreateMap<Product, ProductViewModel>();
+        //    //CreateMap<Category, CategoryViewModel>();
+        //}
     }
 }

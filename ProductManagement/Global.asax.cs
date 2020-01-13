@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
 using ProductManagement.AutoMappers;
 using System;
 using System.Collections.Generic;
@@ -19,11 +20,13 @@ namespace ProductManagement
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Mapper.Initialize(cfg =>
-            {
-                cfg.AddProfile<DomainToViewModelMappingProfile>();
-                cfg.AddProfile<ViewModelToDomainMappingProfile>();
-            });
+
+            //Mapper.Initialize(cfg =>
+            //{
+            //    cfg.AddProfile<DomainToViewModelMappingProfile>();
+            //    cfg.AddProfile<ViewModelToDomainMappingProfile>();
+            //});
+
         }
     }
 }

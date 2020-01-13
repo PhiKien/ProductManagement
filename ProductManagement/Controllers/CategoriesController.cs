@@ -30,7 +30,7 @@ namespace ProductManagement.Controllers
             var list = _categoryRepository.GetAll();
 
             return View(list);
-            //return View(db.Categorys.ToList());
+           // return View(db.Categorys.ToList());
         }
 
         // GET: Categories/Details/5

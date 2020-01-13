@@ -27,20 +27,21 @@ namespace ProductManagement.Repository.Implement
         {
             var model = _mapper.Map<ProductViewModel, Product>(products);
             _context.Products.Add(model);
+            _context.SaveChanges();
         }
 
         public void Delete(ProductViewModel products)
         {
             var model = _mapper.Map<ProductViewModel, Product>(products);
             _context.Products.Remove(model);
+            _context.SaveChanges();
         }
 
         public void Update(ProductViewModel products)
         {
-            _context.Entry(products).State = EntityState.Modified;
-            //var model = _mapper.Map<ProductViewModel, Product>(products);
-            //var product = _context.Products.FirstOrDefault(p => p.ID == model.ID);
-            //product = model;
+            var model = _mapper.Map<ProductViewModel, Product>(products);
+            _context.Entry(model).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public IEnumerable<ProductViewModel> GetAll()

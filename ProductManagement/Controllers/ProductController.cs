@@ -25,7 +25,7 @@ namespace ProductManagement.Controllers
         public ActionResult Index()
         {
             var list = _productRepository.GetAll();
-            if(list.Count() > 0)
+            if(list != null)
             {
                 return View(list);
             }
@@ -119,7 +119,7 @@ namespace ProductManagement.Controllers
         }
 
         // POST: Product/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]    
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
