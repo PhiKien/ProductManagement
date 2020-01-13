@@ -183,3 +183,6 @@ C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\Pr
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.dll
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.pdb
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache

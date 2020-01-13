@@ -4,41 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div style="margin-top: 20px;">
+    <div style="background-color: aqua; float:left; width:20%; height: 500px; ">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-
-   
-@foreach (var item in Model) {
-<tr>
-    <div>
-        <div style="width: 200px; float: left">
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <br />
-            <br />
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-        </div>
-
-        <div>
-            <td>
-                @Html.DisplayFor(modelItem => item.NumberInStock)
-            </td>
-        </div>
     </div>
     
-    <br />
-    <br />
-    @*<td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>*@
-</tr>
-}
+    <div>
+        <div style="float:left; border-radius:5px; width:100px; height: 40px; background-color: cornflowerblue;">
+            <a style="color:aliceblue; text-align: center">
+                @Html.ActionLink("New Product", "Create")
+            </a>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
+                <div style="float:left">
+                    <h3 style="margin-left:30px"><b>@Html.DisplayFor(modelItem => item.Name)</b></h3>
+                    <h3 style="margin-left:30px">@Html.DisplayFor(modelItem => item.Description)</h3>
+                </div>
+                <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
+                    Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
+                </div>
+            </div>
+            <br />
+            <br />
+        }
+    </div>
+</div>
 
+@*<td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+    </td>*@
