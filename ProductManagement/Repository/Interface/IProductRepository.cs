@@ -20,7 +20,7 @@ namespace ProductManagement.Repository.Interface
 
         ProductViewModel GetById(int id);
 
-        ProductViewModel GetByCondition(Object obj);
+        IEnumerable<ProductViewModel> GetByCondition(int? id);
 
         void SaveChange();
     }

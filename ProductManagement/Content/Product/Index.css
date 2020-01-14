@@ -1,0 +1,19 @@
+﻿body {
+}
+
+.text-aliceblue {
+    color: aliceblue
+}
+
+.text-black {
+    color: black;
+}
+
+.btn-edit-Airpods {
+    background-color: aliceblue;
+    border-style: groove;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 240px;
+    margin-top: 10px;
+}

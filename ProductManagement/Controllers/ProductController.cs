@@ -1,4 +1,5 @@
-﻿using ProductManagement.Repository.Interface;
+﻿using PagedList;
+using ProductManagement.Repository.Interface;
 using ProductManagement.UnitOfWorks;
 using ProductManagement.ViewModels;
 using System;
@@ -14,25 +15,29 @@ namespace ProductManagement.Controllers
     {
         IProductRepository _productRepository;
         ICategoryRepository _categoryRepository;
-       
+
         public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
-            _categoryRepository = categoryRepository;         
+            _categoryRepository = categoryRepository;
         }
 
         // GET: Product
-        public ActionResult Index()
+        public ActionResult Index(int? page, int? idCategory)
         {
-            var list = _productRepository.GetAll();
-            if(list != null)
+            
+            idCategory = 1;
+            if (idCategory != null)
             {
-                return View(list);
-            }
-            else
+                var listByIdCategory = _productRepository.GetByCondition(idCategory);
+                return View(listByIdCategory.ToPagedList(page == null ? 1 : page.Value, 3));
+            } else
             {
-                return View();
+                var listAll = _productRepository.GetAll();
+                return View(listAll.ToPagedList(page == null ? 1 : page.Value, 3));
             }
+
+            
         }
 
         // GET: Product/Details/5
@@ -119,13 +124,13 @@ namespace ProductManagement.Controllers
         }
 
         // POST: Product/Delete/5
-        [HttpPost, ActionName("Delete")]    
+        [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
             var model = _productRepository.GetById(id);
             _productRepository.Delete(model);
-            _productRepository.SaveChange();            
+            _productRepository.SaveChange();
             return RedirectToAction("Index");
         }
     }

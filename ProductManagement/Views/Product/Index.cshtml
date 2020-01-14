@@ -1,20 +1,19 @@
 ﻿@model IEnumerable<ProductManagement.ViewModels.ProductViewModel>
+@using PagedList;
+@using PagedList.Mvc;
 
 @{
     ViewBag.Title = "Index";
 }
 
-<div style="margin-top: 20px;">
-    <div style="background-color: aqua; float:left; width:20%; height: 500px; ">
-
+<div style="margin-top: 21px; ">
+    <div style="border-radius:5px; width:100px; height: 40px; background-color: cornflowerblue; float:left; margin-left: 20px;text-align: center;">
+        <button style="margin-top:10px; background-color: cornflowerblue; border-style:hidden;">
+            @Html.ActionLink("New Product", "Create", new { }, new { @class = "text-aliceblue" })
+        </button>
     </div>
-    
-    <div>
-        <div style="float:left; border-radius:5px; width:100px; height: 40px; background-color: cornflowerblue;">
-            <a style="color:aliceblue; text-align: center">
-                @Html.ActionLink("New Product", "Create")
-            </a>
-        </div>
+    <br />
+    <div style="margin-top:40px">
         @foreach (var item in Model)
         {
             <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
@@ -22,14 +21,25 @@
                     <h3 style="margin-left:30px"><b>@Html.DisplayFor(modelItem => item.Name)</b></h3>
                     <h3 style="margin-left:30px">@Html.DisplayFor(modelItem => item.Description)</h3>
                 </div>
-                <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
-                    Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
+                <div>
+                    <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
+                        Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
+                    </div>
+                    @*<div>
+                            <button class="btn-edit">
+                                @Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })
+                            </button>
+                        </div>*@
                 </div>
             </div>
             <br />
             <br />
         }
+        <div style="margin-left:690px">
+            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
+        </div>
     </div>
+
 </div>
 
 @*<td>

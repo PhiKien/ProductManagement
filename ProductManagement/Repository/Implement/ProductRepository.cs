@@ -50,9 +50,10 @@ namespace ProductManagement.Repository.Implement
             return _mapper.Map<List<Product>, List<ProductViewModel>>(listModel);
         }
 
-        public ProductViewModel GetByCondition(object obj)
+        public IEnumerable<ProductViewModel> GetByCondition(int? id)
         {
-            throw new NotImplementedException();
+            var listModel = _context.Products.Where(p => p.CategoryID == id).ToList();
+            return _mapper.Map<List<Product>, List<ProductViewModel>>(listModel);
         }
 
         public ProductViewModel GetById(int id)
