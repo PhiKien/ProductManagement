@@ -98,3 +98,5 @@ C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement.Tests\obj\De
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement.Tests\obj\Debug\ProductManagement.Tests.pdb
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement.Tests\bin\Debug\PagedList.dll
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement.Tests\bin\Debug\PagedList.xml
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement.Tests\bin\Debug\PagedList.dll
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement.Tests\bin\Debug\PagedList.xml

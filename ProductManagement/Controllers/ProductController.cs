@@ -23,21 +23,18 @@ namespace ProductManagement.Controllers
         }
 
         // GET: Product
-        public ActionResult Index(int? page, int? idCategory)
-        {
-            
-            idCategory = 1;
-            if (idCategory != null)
-            {
-                var listByIdCategory = _productRepository.GetByCondition(idCategory);
-                return View(listByIdCategory.ToPagedList(page == null ? 1 : page.Value, 3));
-            } else
-            {
-                var listAll = _productRepository.GetAll();
-                return View(listAll.ToPagedList(page == null ? 1 : page.Value, 3));
-            }
 
-            
+        public ActionResult Index(int? page)
+        {
+            var listAll = _productRepository.GetAll();
+            return View(listAll.ToPagedList(page == null ? 1 : page.Value, 3));
+        }
+
+        [HttpGet]
+        public ActionResult Index2(int? id)
+        {
+            var listAll = _productRepository.GetByCondition(id);
+            return Json(listAll, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Product/Details/5

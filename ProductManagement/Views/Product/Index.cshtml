@@ -5,6 +5,15 @@
 @{
     ViewBag.Title = "Index";
 }
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/modernizr-2.8.3.js"></script>
+<script src="~/Scripts/mustache.js"></script>
+<script src="~/Scripts/Product/index.js"></script>
+
+<script type="text/javascript">
+    var pro = new productController();
+    pro.init();
+</script>
 
 <div style="margin-top: 21px; ">
     <div style="border-radius:5px; width:100px; height: 40px; background-color: cornflowerblue; float:left; margin-left: 20px;text-align: center;">
@@ -13,7 +22,7 @@
         </button>
     </div>
     <br />
-    <div style="margin-top:40px">
+    <div style="margin-top:40px" id="list_product">
         @foreach (var item in Model)
         {
             <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
@@ -25,11 +34,12 @@
                     <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
                         Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
                     </div>
-                    @*<div>
-                            <button class="btn-edit">
-                                @Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })
-                            </button>
-                        </div>*@
+                    <div>
+                        <button class="btn-edit" id="btnEdit">
+                            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })*@
+                            addd
+                        </button>
+                    </div>
                 </div>
             </div>
             <br />
@@ -40,7 +50,33 @@
         </div>
     </div>
 
+    <div style="margin-top:40px" id="lstProduct">
+        
+    </div>
+
 </div>
+
+<script id="dataProduct" type="x-tmpl-mustache">
+    <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
+        <div style="float:left">
+            <h3 style="margin-left:30px"><b>{{Name}}</b></h3>
+            <h3 style="margin-left:30px">{{Description}}</h3>
+        </div>
+        <div>
+            <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
+                Instock: {{NumberInStock}}
+            </div>
+            <div>
+                @*<button class="btn-edit" id="btnEdit">*@
+                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })*@
+                @*addd
+                    </button>*@
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+</script>
 
 @*<td>
         @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
