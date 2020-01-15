@@ -192,5 +192,4 @@ C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.dl
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.Mvc.dll
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.xml
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.Mvc.xml
-C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
