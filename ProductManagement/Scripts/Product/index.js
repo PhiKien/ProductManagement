@@ -13,44 +13,51 @@
 
         $('body').on('click', '#accessories', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 1;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#desktop', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 2;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#ip_phone', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 3;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#laptop', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 4;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#monitor', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 5;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#server', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 6;
-            findById(id);
+            findById(page, id);
         });
 
         $('body').on('click', '#smartphone', function (e) {
             e.preventDefault();
+            var page = 1;
             var id = 7;
-            findById(id);
+            findById(page, id);
         });
     }
 
@@ -58,12 +65,13 @@
 
     //}
 
-    function findById(id) {
+    function findById(page, id) {
         var html1 = '';
         var template = $('#dataProduct').html();
         $.ajax({
-            url: '/Product/Index2',
-            data: {             
+            url: '/Product/FindProductByCategoryID',
+            data: {  
+                page: page,
                 id: id
             },
             type: 'GET',
@@ -82,8 +90,8 @@
                 });
                 $('#lstProduct').html(html1);
             },
-            error: function (err) {               
-                alert('error')
+            error: function (err) {
+                console.log('error');
             }
         });
     }

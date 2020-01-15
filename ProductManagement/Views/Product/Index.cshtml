@@ -15,29 +15,28 @@
     pro.init();
 </script>
 
-<div style="margin-top: 21px; ">
-    <div style="border-radius:5px; width:100px; height: 40px; background-color: cornflowerblue; float:left; margin-left: 20px;text-align: center;">
-        <button style="margin-top:10px; background-color: cornflowerblue; border-style:hidden;">
+<div class="main-div-index">
+    <div class="div-btn-cretae">
+        <button class="btn-create">
             @Html.ActionLink("New Product", "Create", new { }, new { @class = "text-aliceblue" })
         </button>
     </div>
     <br />
-    <div style="margin-top:40px" id="list_product">
+    <div class="form-data-product" id="list_product">
         @foreach (var item in Model)
         {
-            <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
-                <div style="float:left">
+            <div class="item-data">
+                <div class="item-name-desc">
                     <h3 style="margin-left:30px"><b>@Html.DisplayFor(modelItem => item.Name)</b></h3>
                     <h3 style="margin-left:30px">@Html.DisplayFor(modelItem => item.Description)</h3>
                 </div>
-                <div>
-                    <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
+                <div class="item-info">
+                    <div class="item-numberinstock">
                         Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
                     </div>
                     <div>
                         <button class="btn-edit" id="btnEdit">
-                            @*@Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })*@
-                            addd
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "text-black" })
                         </button>
                     </div>
                 </div>
@@ -45,37 +44,38 @@
             <br />
             <br />
         }
-        <div style="margin-left:690px">
+        <div class="paged-list-pager">
             @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
         </div>
     </div>
 
-    <div style="margin-top:40px" id="lstProduct">
-        
+    <div class="form-data-product" id="lstProduct">
+
     </div>
 
 </div>
 
 <script id="dataProduct" type="x-tmpl-mustache">
-    <div style="border-style:groove; border-radius:5px; height: 120px; width:50%; margin-left:250px;">
-        <div style="float:left">
+    <div class="item-data">
+        <div class="item-name-desc">
             <h3 style="margin-left:30px"><b>{{Name}}</b></h3>
             <h3 style="margin-left:30px">{{Description}}</h3>
         </div>
-        <div>
-            <div style="border-radius:5px; width:100px; height: 20px; margin-left:450px; background-color: cornflowerblue; text-align:center; font-size: 15px; color: aliceblue; margin-top: 50px">
+        <div class="item-info">
+            <div class="item-numberinstock">
                 Instock: {{NumberInStock}}
             </div>
-            <div>
-                @*<button class="btn-edit" id="btnEdit">*@
-                @*@Html.ActionLink("Edit", "Edit", new { id=item.ID}, new { @class = "text-black" })*@
-                @*addd
-                    </button>*@
-            </div>
+            <button class="btn-edit" id="btnEdit">
+                @Html.ActionLink("Edit", "Edit", new { id = "{{ID}}"}, new { @class = "text-black" })
+            </button>
         </div>
     </div>
     <br />
     <br />
+    <div class="paged-list-pager">
+        <button>location.assign("/Product/Edit/" + {{ID}});</button>
+        @*@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))*@
+    </div>
 </script>
 
 @*<td>

@@ -31,10 +31,10 @@ namespace ProductManagement.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index2(int? id)
+        public ActionResult FindProductByCategoryID(int? page, int? id)
         {
             var listAll = _productRepository.GetByCondition(id);
-            return Json(listAll, JsonRequestBehavior.AllowGet);
+            return Json(listAll.ToPagedList(page == null ? 1 : page.Value, 3), JsonRequestBehavior.AllowGet);
         }
 
         // GET: Product/Details/5

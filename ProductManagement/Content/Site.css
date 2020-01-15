@@ -43,3 +43,7 @@ textarea {
     text-align: center;
     background-color: inherit;
 }
+
+.form-horizontal .form-group {
+    height: 40px;
+}
