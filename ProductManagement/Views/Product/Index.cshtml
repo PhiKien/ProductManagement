@@ -66,18 +66,25 @@
                 Instock: {{NumberInStock}}
             </div>
             <button class="btn-edit" id="btnEdit">
-                @Html.ActionLink("Edit", "Edit", new { id = "{{ID}}"}, new { @class = "text-black" })
+                Edit
+                @*@Html.ActionLink("Edit", "Edit", new { id = "{{ID}}"}, new { @class = "text-black" })*@
             </button>
         </div>
     </div>
     <br />
     <br />
     <div class="paged-list-pager">
-        <button>location.assign("/Product/Edit/" + {{ID}});</button>
-        @*@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))*@
+        
+        @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
     </div>
 </script>
 
+<script type="text/javascript">
+    function _click() {
+        location.assign("/Product/Edit/" + {{ID}});
+
+    }
+</script>
 @*<td>
         @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
         @Html.ActionLink("Details", "Details", new { id=item.ID }) |
