@@ -35,7 +35,7 @@
                         Instock: @Html.DisplayFor(modelItem => item.NumberInStock)
                     </div>
                     <div>
-                        <button class="btn-edit" id="btnEdit">
+                        <button class="btn-edit">
                             @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "text-black" })
                         </button>
                     </div>
@@ -65,28 +65,15 @@
             <div class="item-numberinstock">
                 Instock: {{NumberInStock}}
             </div>
-            <button class="btn-edit" id="btnEdit">
-                Edit
-                @*@Html.ActionLink("Edit", "Edit", new { id = "{{ID}}"}, new { @class = "text-black" })*@
+            
+            <button type="button" class="btn-edit" id="btnEdit" data-id="{{ID}}">
+                Edit               
             </button>
         </div>
     </div>
     <br />
     <br />
-    <div class="paged-list-pager">
-        
+    <div class="paged-list-pager">      
         @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }))
     </div>
 </script>
-
-<script type="text/javascript">
-    function _click() {
-        location.assign("/Product/Edit/" + {{ID}});
-
-    }
-</script>
-@*<td>
-        @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-        @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-        @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-    </td>*@

@@ -13,13 +13,15 @@ namespace ProductManagement.Controllers
 {
     public class ProductController : Controller
     {
-        IProductRepository _productRepository;
-        ICategoryRepository _categoryRepository;
-
-        public ProductController(IProductRepository productRepository, ICategoryRepository categoryRepository)
+        private IProductRepository _productRepository;
+       
+        public ProductController(IProductRepository productRepository)
         {
             _productRepository = productRepository;
-            _categoryRepository = categoryRepository;
+        }
+
+        public ProductController()
+        {
         }
 
         // GET: Product

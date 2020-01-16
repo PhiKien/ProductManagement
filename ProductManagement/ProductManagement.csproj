@@ -156,9 +156,7 @@
     <Compile Include="AutoMappers\DomainToViewModelMappingProfile.cs" />
     <Compile Include="AutoMappers\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\ProductJSController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -191,7 +189,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\layout.css" />
     <Content Include="Content\PagedList.css" />
-    <Content Include="Content\ProductJS\Index.css" />
     <Content Include="Content\Product\Index.css" />
     <Content Include="Content\Product\Create.css" />
     <Content Include="favicon.ico" />
@@ -212,9 +209,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\mustache.js" />
-    <Content Include="Scripts\ProductJS\index.js" />
     <Content Include="Scripts\Product\index.js" />
-    <Content Include="Views\ProductJS\Index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

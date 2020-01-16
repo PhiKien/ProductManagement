@@ -59,6 +59,12 @@
             var id = 7;
             findById(page, id);
         });
+
+        $('body').on('click', '#btnEdit', function (e) {
+            e.preventDefault();
+            var id = $(this).data("id");
+            window.location.href = "/Product/Edit/" + id;
+        });
     }
 
     //function loadData() {
