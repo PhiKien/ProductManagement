@@ -11,6 +11,7 @@ using ProductManagement.Repository.Interface;
 
 namespace ProductManagement.Controllers
 {
+    
     public class CategoriesController : Controller
     {
         private ProductContext db = new ProductContext();

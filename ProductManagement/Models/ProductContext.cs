@@ -15,6 +15,10 @@ namespace ProductManagement.Models
 
         public DbSet<Category> Categorys { get; set; }
 
+        public DbSet<User> Users{ get; set; }
+
+        public DbSet<Role> Roles{ get; set; }
+
         public ProductContext() : base("ProductManagementDB")
         {
 
@@ -25,5 +29,6 @@ namespace ProductManagement.Models
             base.OnModelCreating(modelBuilder);
         }
 
+        public System.Data.Entity.DbSet<ProductManagement.ViewModels.UserViewModel> UserViewModels { get; set; }
     }
 }
