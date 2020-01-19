@@ -41,6 +41,7 @@ namespace ProductManagement
             container.RegisterType<IProductRepository, ProductRepository>();
             container.RegisterType<ICategoryRepository, CategoryRepository>();
             container.RegisterType<IUserRepository, UserRepository>();
+            container.RegisterType<IRoleRepository, RoleRepository>();
             container.RegisterInstance(mapper);
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

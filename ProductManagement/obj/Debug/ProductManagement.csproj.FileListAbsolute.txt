@@ -83,7 +83,6 @@ C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\Unity.Contai
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\Antlr3.Runtime.pdb
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.init.resources
-C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.updateeurromessage.resources
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.GenerateResource.cache
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.CoreCompileInputs.cache
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.CopyComplete
@@ -193,3 +192,5 @@ C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\Pr
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.CopyComplete
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.dll
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.pdb
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.initdatafirst.resources
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache

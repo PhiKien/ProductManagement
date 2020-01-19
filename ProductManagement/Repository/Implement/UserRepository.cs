@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ProductManagement.Common;
 using ProductManagement.Models;
 using ProductManagement.Repository.Interface;
 using ProductManagement.UnitOfWorks;
@@ -73,10 +74,50 @@ namespace ProductManagement.Repository.Implement
             _context.SaveChanges();
         }
 
-        public IEnumerable<UserViewModel> Login(string userNmae, string passWord)
+        public int Login(string userName, string passWord)
         {
-            var model = _context.Users.Where(u => u.UserName == userNmae && u.Password == passWord).ToList();
-            return model;
+            var passWordHash = Encryptor.MD5Hash(passWord);
+            var result = _context.Users.FirstOrDefault(u => u.UserName == userName);
+            if(result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if(result.Status == false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if(result.Password == passWordHash)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -2;
+                    }
+                }
+            }
+        }
+
+        public UserViewModel GetById(string userName)
+        {
+            var model = _context.Users.FirstOrDefault(u => u.UserName == userName);
+            return _mapper.Map<User, UserViewModel>(model);
+        }
+
+        public List<int> GetListRoleId(string userName)
+        {
+            var users = _context.Users.Where(u => u.UserName == userName).ToList();
+            List<int> list = new List<int>();
+            foreach (var item in users)
+            {
+                var id = item.RoleID;
+                list.Add(id);
+            }
+            return list;
         }
     }
 }

@@ -70,5 +70,30 @@ namespace ProductManagement.Repository.Implement
         {
             _unitOfWork.Commit();
         }
+
+        public IEnumerable<ProductViewModel> GetByRoleID(int roleID)
+        {
+            if(roleID == 1)
+            {
+                var models = _context.Products.ToList();
+                return _mapper.Map<List<Product>, List<ProductViewModel>>(models);
+            }
+            else if(roleID == 2)
+            {
+                var models = _context.Products.Where(p => p.CategoryID == 3 || p.CategoryID == 4 || p.CategoryID == 5 || p.CategoryID == 6 || p.CategoryID == 7).ToList();
+                return _mapper.Map<List<Product>, List<ProductViewModel>>(models);
+            }
+            else if(roleID == 3)
+            {
+                var models = _context.Products.Where(p => p.CategoryID == 4 || p.CategoryID == 5 || p.CategoryID == 7).ToList();
+                return _mapper.Map<List<Product>, List<ProductViewModel>>(models);
+            } 
+            else
+            {
+                var models = _context.Products.ToList();
+                return _mapper.Map<List<Product>, List<ProductViewModel>>(models);
+            }
+            
+        }
     }
 }

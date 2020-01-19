@@ -11,6 +11,11 @@ namespace ProductManagement.Models
     // Update-Database
     public class ProductContext : DbContext
     {
+        public ProductContext() : base("ProductManagementDB")
+        {
+
+        }
+
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Category> Categorys { get; set; }
@@ -19,16 +24,11 @@ namespace ProductManagement.Models
 
         public DbSet<Role> Roles{ get; set; }
 
-        public ProductContext() : base("ProductManagementDB")
-        {
-
-        }
+       
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
         }
-
-        public System.Data.Entity.DbSet<ProductManagement.ViewModels.UserViewModel> UserViewModels { get; set; }
     }
 }

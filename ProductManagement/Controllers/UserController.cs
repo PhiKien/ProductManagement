@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.Linq;
-using System.Net;
-using System.Web;
+﻿using System.Net;
 using System.Web.Mvc;
-using ProductManagement.Models;
 using ProductManagement.Repository.Interface;
 using ProductManagement.ViewModels;
 
@@ -126,17 +119,10 @@ namespace ProductManagement.Controllers
             return RedirectToAction("Index");
         }
 
-        public bool Login(string userName, string passWord)
+        public ActionResult Logout()
         {
-            var result = _userRepository.Login(userName, passWord);
-            if(result.Count() < 1)
-            {
-                return false;
-            } 
-            else
-            {
-                return true;
-            }
+            Session[Common.CommonConstant.USER_SESSTION] = null;
+            return RedirectToAction("Index", "Login");
         }
 
     }

@@ -67,9 +67,9 @@
                 if (!context.Users.Any(p => p.UserName == "Admin" && p.ID == 1))
                 {
                     context.Users.AddRange(new List<User> {
-                    new User ("Admin", "admin123", "Admin", "HN", "Admin@gmail.com", "0966015228", DateTime.Now, DateTime.Now,true, 1),
-                    new User ("ProductManage", "productmanage", "PM", "HN", "PM@gmail.com", "0966015771", DateTime.Now, DateTime.Now,true, 2),
-                    new User ("Employee", "employee", "Employee", "HN", "Employee@gmail.com", "0945815228", DateTime.Now, DateTime.Now,true, 3)
+                    new User ("Admin", "0192023a7bbd73250516f069df18b500", "Admin", "HN", "Admin@gmail.com", "0966015228", DateTime.Now, DateTime.Now,true, 1),
+                    new User ("ProductManage", "a2f92fd4b342fd50710b8c8f7ba3fb1f", "PM", "HN", "PM@gmail.com", "0966015771", DateTime.Now, DateTime.Now,true, 2),
+                    new User ("Employee", "fa5473530e4d1a5a1e1eb53d2fedb10c", "Employee", "HN", "Employee@gmail.com", "0945815228", DateTime.Now, DateTime.Now,true, 3)
                 });
                     context.SaveChanges();
                 }

@@ -1,10 +1,5 @@
 ﻿using ProductManagement.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductManagement.Repository.Interface
 {
@@ -21,6 +16,8 @@ namespace ProductManagement.Repository.Interface
         ProductViewModel GetById(int id);
 
         IEnumerable<ProductViewModel> GetByCondition(int? id);
+
+        IEnumerable<ProductViewModel> GetByRoleID(int id);
 
         void SaveChange();
     }

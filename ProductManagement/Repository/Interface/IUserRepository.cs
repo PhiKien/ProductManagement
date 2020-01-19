@@ -19,9 +19,13 @@ namespace ProductManagement.Repository.Interface
 
         UserViewModel GetById(long id);
 
+        UserViewModel GetById(string userName);
+
         IEnumerable<UserViewModel> GetByRole(int? id);
 
-        IEnumerable<UserViewModel> Login(string userNmae, string passWord);
+        int Login(string userNmae, string passWord);
+
+        List<int> GetListRoleId(string userName);
 
         void SaveChange();
     }
