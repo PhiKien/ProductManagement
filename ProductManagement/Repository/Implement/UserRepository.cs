@@ -32,9 +32,18 @@ namespace ProductManagement.Repository.Implement
 
         public void Add(UserViewModel entity)
         {
-            var model = _mapper.Map<UserViewModel, User>(entity);
-            _context.Users.Add(model);
-            _context.SaveChanges();
+            var users = _context.Users.ToList();
+            foreach (var item in users)
+            {
+                if(entity.UserName != item.UserName)
+                {
+                    var model = _mapper.Map<UserViewModel, User>(entity);
+                    _context.Users.Add(model);
+                    _context.SaveChanges();
+                }
+            }
+            
+            
         }
 
         public void Delete(UserViewModel entity)
@@ -119,5 +128,7 @@ namespace ProductManagement.Repository.Implement
             }
             return list;
         }
+
+       
     }
 }

@@ -51,10 +51,10 @@
                                         @Html.ValidationSummary(false, "", new { @class = "text-danger"})
                                         <fieldset>
                                             <div class="form-group">
-                                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control form-control-user", @autofocus = "autofocus" })
+                                                @Html.TextBoxFor(model => model.UserName, new { placeholder = "User Name", @class = "form-control form-control-user", @autofocus = "autofocus" })
                                             </div>
                                             <div class="form-group">
-                                                @Html.PasswordFor(model => model.PassWord, new { @class = "form-control form-control-user" })
+                                                @Html.PasswordFor(model => model.PassWord, new { placeholder = "Password", @class = "form-control form-control-user" })
                                             </div>
                                             <div class="form-group">
                                                 <div class="custom-control custom-checkbox small">
@@ -79,7 +79,8 @@
                                         <a class="small" href="forgot-password.html">Forgot Password?</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a>@Html.ActionLink("Create an Account!", "Index", "User")</a> 
+                                        @*<a class="small" href="register.html">Create an Account!</a>*@
                                     </div>
                                 </div>
                             </div>

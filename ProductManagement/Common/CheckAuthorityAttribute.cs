@@ -24,6 +24,14 @@ namespace ProductManagement.Common
             }
         }
 
+        protected override void HandleUnauthorizedRequest(AuthorizationContext filterContext)
+        {
+            filterContext.Result = new ViewResult
+            {
+                ViewName = "~/Views/Shared/401.cshtml"
+            };
+        }
+
         private List<int> GetCredentiaByLoggedInUser()
         {
             var credentials = (List<int>) HttpContext.Current.Session[CommonConstant.SESSION_CREDENTIALS];

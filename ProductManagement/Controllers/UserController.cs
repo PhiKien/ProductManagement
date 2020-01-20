@@ -1,5 +1,7 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using System.Web.Mvc;
+using ProductManagement.Common;
 using ProductManagement.Repository.Interface;
 using ProductManagement.ViewModels;
 
@@ -18,8 +20,8 @@ namespace ProductManagement.Controllers
         // GET: User
         public ActionResult Index()
         {
-            var listUser = _userRepository.GetAll();
-            return View(listUser);
+            //var listUser = _userRepository.GetAll();
+            return View();
         }
 
         // GET: User/Details/5
@@ -52,9 +54,23 @@ namespace ProductManagement.Controllers
         {
             if (ModelState.IsValid)
             {
-                _userRepository.Add(userViewModel);
+                var passwordHash = Encryptor.MD5Hash(userViewModel.Password);               
+                
+                UserViewModel userViewModel2 = new UserViewModel();
+                userViewModel2.UserName = userViewModel.UserName;
+                userViewModel2.Name = userViewModel.Name;
+                userViewModel2.Password = passwordHash;
+                userViewModel2.Email = userViewModel.Email;
+                userViewModel2.Address = userViewModel.Address;
+                userViewModel2.Phone = "";
+                userViewModel2.CreateDate = DateTime.Now;
+                userViewModel2.ModifiedDate = DateTime.Now;
+                userViewModel2.Status = true;
+                userViewModel2.RoleID = 3;
+
+                _userRepository.Add(userViewModel2);
                 _userRepository.SaveChange();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Product");
             }
 
             return View(userViewModel);
@@ -124,6 +140,7 @@ namespace ProductManagement.Controllers
             Session[Common.CommonConstant.USER_SESSTION] = null;
             return RedirectToAction("Index", "Login");
         }
+
 
     }
 }
