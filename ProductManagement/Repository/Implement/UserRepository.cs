@@ -111,6 +111,36 @@ namespace ProductManagement.Repository.Implement
             }
         }
 
+        public int LoginAdmin(string userName, string passWord)
+        {
+            var passWordHash = Encryptor.MD5Hash(passWord);
+            
+            var result = _context.Users.FirstOrDefault(u => u.UserName == userName && u.RoleID == 1);
+
+            if (result == null)
+            {
+                return 0;
+            }
+            else
+            {
+                if (result.Status == false)
+                {
+                    return -1;
+                }
+                else
+                {
+                    if (result.Password == passWordHash)
+                    {
+                        return 1;
+                    }
+                    else
+                    {
+                        return -2;
+                    }
+                }
+            }
+        }
+
         public UserViewModel GetById(string userName)
         {
             var model = _context.Users.FirstOrDefault(u => u.UserName == userName);

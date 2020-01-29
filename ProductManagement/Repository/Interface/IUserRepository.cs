@@ -1,10 +1,5 @@
-﻿using ProductManagement.Models;
-using ProductManagement.ViewModels;
-using System;
+﻿using ProductManagement.ViewModels;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProductManagement.Repository.Interface
 {
@@ -26,9 +21,10 @@ namespace ProductManagement.Repository.Interface
 
         int Login(string userNmae, string passWord);
 
+        int LoginAdmin(string userNmae, string passWord);
+
         List<int> GetListRoleId(string userName);
 
-        
         void SaveChange();
     }
 }

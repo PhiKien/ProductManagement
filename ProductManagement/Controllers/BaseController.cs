@@ -11,7 +11,7 @@ namespace ProductManagement.Controllers
             var session =(UserLogin) Session[CommonConstant.USER_SESSTION];
             if(session == null)
             {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Index", Area = "Admin"}));
+                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Login", action = "Index"/*, Area = "Admin"*/}));
             }
             base.OnActionExecuting(filterContext);
         }

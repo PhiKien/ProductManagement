@@ -11,7 +11,7 @@ using ProductManagement.Repository.Interface;
 
 namespace ProductManagement.Areas.Admin.Controllers
 {
-    public class UsersController : Controller
+    public class UsersController : BaseController
     {
         private ProductContext db = new ProductContext();
         IUserRepository _userRepository;
@@ -134,6 +134,12 @@ namespace ProductManagement.Areas.Admin.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult Logout()
+        {
+            Session[Common.CommonConstant.USER_SESSTION] = null;
+            return RedirectToAction("Index", "LoginAdmin");
         }
     }
 }
