@@ -70,7 +70,7 @@ namespace ProductManagement.Controllers
 
                 _userRepository.Add(userViewModel2);
                 _userRepository.SaveChange();
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Login");
             }
 
             return View(userViewModel);
@@ -138,6 +138,7 @@ namespace ProductManagement.Controllers
         public ActionResult Logout()
         {
             Session[Common.CommonConstant.USER_SESSTION] = null;
+            Session.Clear();
             return RedirectToAction("Index", "Login");
         }
 

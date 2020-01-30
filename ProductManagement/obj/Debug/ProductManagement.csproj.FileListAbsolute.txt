@@ -94,6 +94,8 @@ C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.dl
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.Mvc.dll
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.xml
 C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\bin\PagedList.Mvc.xml
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.initdatafirst.resources
+C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\ProductManagement.dll.config
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\ProductManagement.dll
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\ProductManagement.pdb
@@ -192,5 +194,3 @@ C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\Pr
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.CopyComplete
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.dll
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.pdb
-C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.initdatafirst.resources
-C:\Users\drago\Desktop\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
