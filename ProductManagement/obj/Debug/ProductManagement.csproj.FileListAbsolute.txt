@@ -186,7 +186,6 @@ C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\Unity.Ab
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\Unity.Container.pdb
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\Antlr3.Runtime.pdb
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csprojAssemblyReference.cache
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.init.resources
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.Migrations.initdatafirst.resources
 C:\Users\PC_KIEN\Documents\FPTS\ProductManagement\ProductManagement\obj\Debug\ProductManagement.csproj.GenerateResource.cache

@@ -99,6 +99,7 @@ namespace ProductManagement.Areas.Admin.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             User user = db.Users.Find(id);
+            //User user2 = new User(user.UserName, user.Password, user.Name, user.Address, user.Email, user.Phone, user.CreateDate, user.Status, user.RoleID);
             if (user == null)
             {
                 return HttpNotFound();
@@ -163,7 +164,7 @@ namespace ProductManagement.Areas.Admin.Controllers
         {
             Session[Common.CommonConstant.USER_SESSTION] = null;
             Session.Clear();
-            return RedirectToAction("Index", "LoginAdmin");
+            return RedirectToAction("Index", "../Login");
         }
     }
 }

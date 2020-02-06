@@ -22,10 +22,15 @@
                 @{
                     var session = (ProductManagement.Common.UserLogin)Session[ProductManagement.Common.CommonConstant.USER_SESSTION];
                 }
-                @if (session != null)
+                @if (session != null && session.RoleID == 1)
+                {
+                    <h4 style="color:aliceblue; text-align:right; margin-top:23px">Hello: @session.UserName | @Html.ActionLink("Management", "Index", "Admin/Users") | @Html.ActionLink("Logout", "Logout", "User")</h4>
+                }
+                else if (session != null && session.RoleID != 1)
                 {
                     <h4 style="color:aliceblue; text-align:right; margin-top:23px">Hello: @session.UserName | @Html.ActionLink("Logout", "Logout", "User")</h4>
                 }
+
             </div>
         </div>
     </div>
@@ -78,13 +83,13 @@
                 </button>
             }
             @if (session.RoleID == 3)
-            {                
+            {
                 <button class="navbar-left" id="laptop">
                     <h4>Laptop</h4>
                 </button>
                 <button class="navbar-left" id="monitor">
                     <h4>Monitor</h4>
-                </button>                
+                </button>
                 <button class="navbar-left" id="smartphone">
                     <h4>SmartPhone</h4>
                 </button>
